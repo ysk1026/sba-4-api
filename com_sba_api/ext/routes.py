@@ -1,4 +1,3 @@
-from com_sba_api.food.food_router import FoodRouter
-
+from com_sba_api.food.food_api import FoodApi
 def initialize_routes(api):
-    api.add_resource(FoodRouter, '/api/foods')
+    api.add_resource(FoodApi, '/api/foods')

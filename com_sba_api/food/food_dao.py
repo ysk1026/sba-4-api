@@ -1,6 +1,7 @@
 import mysql.connector
 from com_sba_api.ext.db import config
 
+
 class FoodDao:
     
     def __init__(self):
@@ -11,11 +12,13 @@ class FoodDao:
     def select_foods(self):
         cur = self.cursor
         con = self.connector
-
+        rows = []
         try:
             cur.execute('select * from food',)
-            for row in cur:
+            rows = cur.fetchall()
+            for row in rows:
                 print(f'price is : {str(row["price"])}')
+            
             cur.close()
         except:
             print('Exception ...')
@@ -23,9 +26,8 @@ class FoodDao:
         finally:
             if con is not None:
                 con.close()
+        return rows
 
-if __name__ == '__main__':
-    print('---2---')
-    dao = FoodDao()
-    dao.select_foods()
-    
+print('---2---')
+dao = FoodDao()
+dao.select_foods()
