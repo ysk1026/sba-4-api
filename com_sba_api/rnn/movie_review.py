@@ -22,7 +22,7 @@ class MovieReview:
     def hook(self):
         print('==== Hook ====')
         self.train()
-        print(self.classify('그럭저럭 볼 만 했다.'))
+        print(self.classify('인생 영화다 ㅠ 개꿀잼.'))
 
     def load_corpus(self):
         reader = self.reader
