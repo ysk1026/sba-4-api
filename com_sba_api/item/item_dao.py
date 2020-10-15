@@ -2,7 +2,7 @@ import mysql.connector
 from com_sba_api.ext.db import config
 
 
-class FoodDao:
+class ItemDao:
     
     def __init__(self):
         self.connector  = mysql.connector.connect(**config)
@@ -29,5 +29,5 @@ class FoodDao:
         return rows
 
 print('---2---')
-dao = FoodDao()
+dao = ItemDao()
 dao.select_foods()
